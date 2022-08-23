@@ -70,7 +70,7 @@ const handlePlay = () => {
       danmaku?.add(mockDanmu());
     }
     timer = setTimeout(insertBarrage, 2000 + Math.floor(Math.random() * 10000));
-  }, 2000);
+  }, 1000);
 }
 const handlePause = () => {
   danmaku?.stop()

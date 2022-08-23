@@ -9,11 +9,11 @@ class Danmaku<T> extends EventEmitter {
   el: HTMLElement
   waitingQueue: IDanmuObject<T>[] = []
   tracks: Track<T>[] = []
-  maxTrack: number = 4
+  maxTrack: number = 10
   domPool: IDanmuContainer[] = []
   maxPool: number = 30
   danmuComp: any
-  duration: number = 10000 // 弹幕展示的时长
+  duration: number = 5000 // 弹幕展示的时长
   trackWidth: number // 轨道的宽度
   trackHeight: number = 20 // 轨道的高度
   animation: number | null = null
