@@ -25,17 +25,18 @@ defineProps({
   display: inline-block;
   display: flex;
   align-items: center;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 img {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 0 2px palegreen;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid gold;
 }
 
 span {
   margin-left: 8px;
+  font-size: 26px;
 }
 </style>

@@ -44,15 +44,19 @@ class Danmaku<T> extends EventEmitter {
     return 0.8 + Math.random() * 1.3
   }
   bindEvent() {
-    this.el.addEventListener('click', (e: MouseEvent) => {            
-      const path: HTMLElement[] = e.path
-      const parent = path[1]
+    this.el.addEventListener('click', (e: MouseEvent) => {
       this.clearStopStatus()
-      const obj = this.elmToObj.get(parent)
-      if(parent.id === 'danmu-container') {
+      console.log(e.target);
+                  
+      const target: HTMLElement = e.target as HTMLElement
+
+      const obj = this.elmToObj.get(target)
+      
+      
+      if(target.id === 'danmu-container') {
         obj!.stop = true
         this.el.style.pointerEvents = 'auto'
-        const rect = parent.getBoundingClientRect()
+        const rect = target.getBoundingClientRect()
         const position = {
           top: rect.top + rect.height,
           left: e.layerX

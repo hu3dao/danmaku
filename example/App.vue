@@ -18,7 +18,7 @@ let danmaku: Danmaku<IDanmuProps> | null = null
 onMounted(() => {
   initDanmaku()
   faker.locale = 'zh_CN'
-  randomAddData()
+  // randomAddData()
 })
 
 const randomAddData = () => {
@@ -26,7 +26,7 @@ const randomAddData = () => {
   for (let i = 0; i < 10; i++) {
     const avatar1 = "https://quyuehui-1251661065.image.myqcloud.com/client/avatar/quyue_boy.png?imageMogr2/format/png/thumbnail/90x"
     const avatar2 = "https://quyuehui-1251661065.image.myqcloud.com/client/avatar/quyue_girl.png?imageMogr2/format/png/thumbnail/90x"
-    const text = faker.lorem.words(Math.ceil(Math.random() * 8))
+    const text = faker.lorem.words(Math.ceil(Math.random() * 6 + 2))
     list.push({
       avatar1,
       avatar2,
@@ -48,7 +48,7 @@ const mockDanmu = (): IDanmuProps[] => {
 }
 
 const initDanmaku = () => {
-  danmaku = new Danmaku<IDanmuProps>(".danmaku", Danmu, { trackHeight: 30 })
+  danmaku = new Danmaku<IDanmuProps>(".danmaku", Danmu, { trackHeight: 50, maxTrack: 6 })
   danmaku.onChoose((position: { left: number, top: number } | undefined) => {
     if (position) {
       toolsStyle.top = `${position.top}px`
@@ -65,12 +65,12 @@ let timer = null
 const handlePlay = () => {
   danmaku?.start()
   timer = setTimeout(function insertBarrage() {
-    let sumScroll = 1 + Math.floor(5 * Math.random());
+    let sumScroll = 1 + Math.floor(12 * Math.random());
     while (sumScroll--) {
       danmaku?.add(mockDanmu());
     }
-    timer = setTimeout(insertBarrage, 2000 + Math.floor(Math.random() * 10000));
-  }, 1000);
+    timer = setTimeout(insertBarrage, 1000 + Math.floor(Math.random() * 5000));
+  }, 300);
 }
 const handlePause = () => {
   danmaku?.stop()
