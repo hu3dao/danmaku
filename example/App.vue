@@ -78,9 +78,18 @@ const handlePause = () => {
 const handleEnded = () => {
   danmaku?.clear()
 }
-const danmuText = ref<string>("")
+const danmuText = ref<string>("这是一条弹幕")
 const sendDanmu = () => {
-  danmaku?.add(mockDanmu());
+  const avatar1 = "https://quyuehui-1251661065.image.myqcloud.com/client/avatar/quyue_boy.png?imageMogr2/format/png/thumbnail/90x"
+  const avatar2 = "https://quyuehui-1251661065.image.myqcloud.com/client/avatar/quyue_girl.png?imageMogr2/format/png/thumbnail/90x"
+  const danmu = [
+    {
+      avatar1,
+      avatar2,
+      text: danmuText.value
+    }
+  ]
+  danmaku?.add(danmu);
 }
 </script>
 
@@ -96,7 +105,7 @@ const sendDanmu = () => {
     <div class="tools">
       <input type="text" class="danmu-input" v-model="danmuText" />
       <button class="send-danmu-btn" @click="sendDanmu">发送弹幕</button>
-      <input type="color" class="danmu-color-input">
+      <!-- <input type="color" class="danmu-color-input"> -->
     </div>
   </div>
 </template>
