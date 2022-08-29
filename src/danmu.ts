@@ -3,6 +3,7 @@ import EventEmitter from "./event-emitter"
 import { IDanmuContainer } from "./types"
 class Danmu<T> extends EventEmitter {
   danmuContainer: IDanmuContainer // 承载弹幕的容器
+  // @ts-ignore
   dom: HTMLElement // 生成的弹幕dom
   offset: number = 0
   speed: number = 0

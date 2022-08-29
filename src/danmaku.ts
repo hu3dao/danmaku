@@ -59,6 +59,7 @@ class Danmaku<T> extends EventEmitter {
         const rect = target.getBoundingClientRect()
         const position = {
           top: rect.top + rect.height,
+          // @ts-ignore
           left: e.layerX
         }
         this.$emit('onChoose', position)
@@ -76,9 +77,9 @@ class Danmaku<T> extends EventEmitter {
     })
   }
   // 添加弹幕到等待队列中
-  add(data: T[]) {
+  add(data: T[] | T) {
     if(isArray(data)) {      
-      data.forEach(item => {
+      (data as T[]).forEach(item => {
         const danmuObject: IDanmuObject<T> = {
           danmuProps: item,
           speed: 0,
@@ -87,7 +88,15 @@ class Danmaku<T> extends EventEmitter {
         }
         this.waitingQueue.push(danmuObject)
       })
-    }    
+    } else {
+      const danmuObject: IDanmuObject<T> = {
+        danmuProps: data as T,
+        speed: 0,
+        offset: this.trackWidth,
+        width: 0
+      }
+      this.waitingQueue.push(danmuObject)
+    }   
   }
   // 初始化dom池
   initDomPool() {    

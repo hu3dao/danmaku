@@ -129,12 +129,16 @@ button {
 
 .content {
   position: relative;
-  width: 960px;
-  height: 400px;
+  width: 700px;
+
 }
 
 .video-player {
+  position: absolute;
+  top: 0;
+  left: 150px;
   vertical-align: top;
+  width: 400px;
 }
 
 .danmaku {
@@ -143,7 +147,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   pointer-events: none;
 }
 
