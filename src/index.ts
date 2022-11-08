@@ -2,6 +2,7 @@ import Danmu from "./danmu";
 import Track from "./track";
 import { IOptions } from "./types";
 import { getEl, isEmptyArray } from "./utils";
+import "intersection-observer";
 
 const TIME_PER_FRAME = 16.6;
 const scaleRatio =

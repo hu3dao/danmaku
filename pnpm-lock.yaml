@@ -1,10 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
+  intersection-observer: ^0.12.2
   tsup: ^6.4.0
   typescript: ^4.8.4
 
 devDependencies:
+  intersection-observer: 0.12.2
   tsup: 6.4.0_typescript@4.8.4
   typescript: 4.8.4
 
@@ -471,6 +473,10 @@ packages:
 
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: true
+
+  /intersection-observer/0.12.2:
+    resolution: {integrity: sha512-7m1vEcPCxXYI8HqnL8CKI6siDyD+eIWSwgB3DZA+ZTogxk9I4CDnj4wilt9x/+/QbHI4YG5YZNmC6458/e9Ktg==}
     dev: true
 
   /is-binary-path/2.1.0:

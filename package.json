@@ -1,19 +1,22 @@
 {
   "name": "@za/danmaku",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "可自定义弹幕样式的弹幕引擎库",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "scripts": {
     "dev": "pnpm run build --watch --ignore-watch examples",
-    "build": "tsup src/index.ts --dts  --format cjs,esm"
+    "build": "tsup src/index.ts --dts --format cjs,esm"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "intersection-observer": "^0.12.2",
     "tsup": "^6.4.0",
     "typescript": "^4.8.4"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
