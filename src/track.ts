@@ -1,10 +1,15 @@
 import Danmu from "./danmu";
 
 export default class Track<T> {
-  danmus: Danmu[] = [];
+  danmus: Danmu<T>[] = [];
   offset: number = 0;
+  top: number = 0;
 
-  push(danmu: Danmu) {
+  constructor(top: number) {
+    this.top = top;
+  }
+
+  push(danmu: Danmu<T>) {
     this.danmus.push(danmu);
   }
   remove() {

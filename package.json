@@ -1,7 +1,7 @@
 {
   "name": "@za/danmaku",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.5",
+  "description": "可自定义弹幕样式的弹幕引擎库",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "scripts": {

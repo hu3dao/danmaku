@@ -37,14 +37,15 @@ const handleClear = () => {
   danmaku.value?.clear();
 };
 
-const isShow = ref(true);
+const isShow = ref(false);
 const toggle = () => {
   isShow.value = !isShow.value;
 };
 </script>
 
 <template>
-  <div class="container">
+  <button @click="toggle">切换</button>
+  <div class="container" v-show="isShow">
     <div class="video-wrapper">
       视频区域
       <div class="danmu-wrapper"></div>
